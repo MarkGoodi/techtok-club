@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10100f">
+    <title>Moderate community posts — TechTok Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tech.css">
+    <script src="moderate.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">t<span>.</span></span><span>techtok<span class="brand-light">club</span></span></a>
+        <a class="back-top" href="/">BACK TO WEBSITE ↗</a>
+    </header>
+    <main class="moderation-page section-wrap">
+        <p class="eyebrow">PRIVATE ADMIN AREA</p>
+        <h1>Review the<br><span>community board.</span></h1>
+        <p class="moderation-intro">Approve useful, respectful problems and comments before they appear publicly. Delete spam or personal information. Set a strong, unique <code>MODERATION_PASSWORD</code> in your hosting environment (at least 16 characters) to sign in.</p>
+        <form class="moderation-login" id="moderation-login">
+            <label for="moderation-password">Moderation password</label>
+            <div class="moderation-login-row">
+                <input id="moderation-password" type="password" autocomplete="current-password" required>
+                <button class="button button-primary" type="submit">Sign in</button>
+            </div>
+            <p class="moderation-status" id="moderation-status" role="status" aria-live="polite"></p>
+        </form>
+        <section class="moderation-queue" id="moderation-queue" hidden>
+            <div class="moderation-queue-heading">
+                <h2>Needs your review</h2>
+                <button class="moderation-logout" id="moderation-logout" type="button">Sign out</button>
+            </div>
+            <div id="moderation-items"></div>
+        </section>
+    </main>
+</body>
+</html>

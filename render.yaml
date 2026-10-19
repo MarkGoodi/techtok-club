@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: techtok-club
+    runtime: python
+    plan: free
+    buildCommand: python -m pip install -r requirements.txt && python -m py_compile tech.py
+    startCommand: python tech.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: HOST
+        value: 0.0.0.0
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: MODERATION_PASSWORD
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
